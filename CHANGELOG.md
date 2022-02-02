@@ -9,3 +9,7 @@
 ## 1.1.0
 
 * Added notification `timeOut` method
+
+## 1.2.0
+
+* Creates `.notify` Element via JavaScript

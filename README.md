@@ -66,6 +66,13 @@ Then create a notify.js file a copy the below code to that file
 
 ```JS
 class Notify {
+    static #createParent() {
+        const parent = document.createElement('div');
+        parent.classList.add('notify');
+        document.body.appendChild(parent);
+        return parent;
+    }
+
     static #timeOut(elem) {
         setTimeout(() => {
             elem.classList.remove("show");
@@ -76,6 +83,10 @@ class Notify {
     }
 
     static success(message) {
+        if (!document.querySelector('.notify')) {
+            this.#createParent();
+        }
+        const body = document.querySelector('body');
         const elem = document.createElement("div");
         elem.innerText = message;
         elem.classList.add("notify-success", "show");
@@ -85,6 +96,10 @@ class Notify {
     }
 
     static error(message) {
+        if (!document.querySelector('.notify')) {
+            this.#createParent();
+        }
+        const body = document.querySelector('body');
         const elem = document.createElement("div");
         elem.innerText = message;
         elem.classList.add("notify-error", "show");;
@@ -93,9 +108,14 @@ class Notify {
         this.#timeOut(elem);
     }
 }
+
+
+Notify.success("Login Successful");
+Notify.error("Error Message");
+
 ```
 
-Connect the `notify.css` and `notify.js` file to you html file and Create a simple `div` tag with a class `notify`
+Connect the `notify.css` and `notify.js` file to you html file
 
 ```HTML
 <!DOCTYPE html>
@@ -108,8 +128,6 @@ Connect the `notify.css` and `notify.js` file to you html file and Create a simp
 
 
     <body>
-        ....
-        <div class="notify"> </div>
         
         ....
         <script src="notify.js"> </script>
