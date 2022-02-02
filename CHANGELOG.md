@@ -13,3 +13,10 @@
 ## 1.2.0
 
 * Creates `.notify` Element via JavaScript
+
+## 1.2.1
+
+* Added Documention for `Notify.createParent` method
+* Added Documention for `Notify.timeOut` method
+* Added Documention for `Notify.success` method
+* Added Documention for `Notify.error` method
