@@ -1,4 +1,10 @@
 class Notify {
+    static #createParent() {
+        const parent = document.createElement('div');
+        parent.classList.add('notify');
+        document.body.appendChild(parent);
+        return parent;
+    }
 
     static #timeOut(elem) {
         setTimeout(() => {
@@ -10,6 +16,10 @@ class Notify {
     }
 
     static success(message) {
+        if (!document.querySelector('.notify')) {
+            this.#createParent();
+        }
+        const body = document.querySelector('body');
         const elem = document.createElement("div");
         elem.innerText = message;
         elem.classList.add("notify-success", "show");
@@ -19,6 +29,10 @@ class Notify {
     }
 
     static error(message) {
+        if (!document.querySelector('.notify')) {
+            this.#createParent();
+        }
+        const body = document.querySelector('body');
         const elem = document.createElement("div");
         elem.innerText = message;
         elem.classList.add("notify-error", "show");;
