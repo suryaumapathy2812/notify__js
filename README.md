@@ -1,7 +1,7 @@
 # Notify
 
-This is a simple Notify library used to create a notification messages
-Currently supported message type are
+This is a simple notification library called Notify used to create a notification messages in the browsers.
+Currently supported methods are:
 
 * success
 * error
