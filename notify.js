@@ -65,7 +65,3 @@ class Notify {
         this.#timeOut(elem);
     }
 }
-
-
-Notify.success("Login Successful");
-Notify.error("Error Message");

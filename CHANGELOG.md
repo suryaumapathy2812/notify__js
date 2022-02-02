@@ -20,3 +20,8 @@
 * Added Documention for `Notify.timeOut` method
 * Added Documention for `Notify.success` method
 * Added Documention for `Notify.error` method
+
+## 1.3.0
+
+* Created a cdn for `notify.js` and `notify.css`
+* Updated README.md with the cdn links
